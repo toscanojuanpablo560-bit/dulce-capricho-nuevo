@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dulce Capricho | Integración de Contenidos Digitales</title>
+<meta name="description" content="Dulce Capricho: emprendimiento de postres artesanales del programa Técnico en Integración de Contenidos Digitales (SENA - SENATIC).">
+<style>
+:root{--bg:#120a0a;--card:#1f1212;--txt:#fff4e6;--mut:#d9bfae;--red:#e0243a;--yel:#ffc530;--pur:#8e44ad;--bro:#7b4a2d;--g:#25d366}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:50;background:rgba(18,10,10,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--red)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:8px 18px;max-width:1100px;margin:auto}
+.nav img{height:46px;width:46px;border-radius:50%;object-fit:cover}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--yel);text-decoration:none}
+nav ul{display:flex;gap:16px;list-style:none;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.9rem;color:var(--mut)}
+nav a:hover{color:var(--yel)}
+#mb{display:none;background:none;border:2px solid var(--yel);color:var(--yel);font-size:1.4rem;border-radius:8px;padding:2px 10px}
+.hero{background:radial-gradient(circle at 70% 20%,#5a1420,transparent 60%),var(--bg);padding:56px 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;color:var(--yel)}
+.hero p{margin:14px 0;color:var(--mut);font-size:1.08rem}
+.logo-hero{width:min(320px,80%);margin:auto;border-radius:50%;box-shadow:0 0 50px rgba(224,36,58,.45)}
+.btn{display:inline-block;padding:11px 22px;border-radius:30px;font-weight:700;text-decoration:none;margin:6px 8px 0 0}
+.b1{background:var(--g);color:#06220f}.b2{background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4);color:#fff}.b3{border:2px solid var(--yel);color:var(--yel)}
+section{padding:54px 0}
+section:nth-of-type(even){background:#190e0e}
+h2{font-size:clamp(1.5rem,3.5vw,2.2rem);color:var(--yel);margin-bottom:8px}
+h2+.sub{color:var(--mut);margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid #3a2020;border-radius:16px;padding:20px}
+.card h3{color:var(--yel);margin-bottom:6px}
+.card ul{padding-left:18px;color:var(--mut)}
+.prod img{border-radius:12px;width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:10px}
+.price{font-size:1.4rem;font-weight:800;color:var(--yel)}
+.tag{display:inline-block;background:var(--red);border-radius:20px;padding:2px 12px;font-size:.8rem;font-weight:700;margin-bottom:8px}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.vid{border-radius:14px;overflow:hidden;background:#000;border:2px solid #3a2020}
+.vid video{width:100%;max-height:480px;background:#000}
+.ph{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;color:var(--mut);font-size:.9rem}
+.dofa{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.org{border-radius:16px;margin:auto;max-height:720px;width:auto}
+.tl{border-left:3px solid var(--red);padding-left:18px}
+.tl div{margin-bottom:16px}.tl b{color:var(--yel)}
+footer{background:#000;text-align:center;padding:30px 18px 90px;color:var(--mut);font-size:.9rem}
+.float{position:fixed;right:14px;bottom:14px;display:flex;flex-direction:column;gap:10px;z-index:60}
+.float a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.5);font-size:.75rem}
+@media(max-width:800px){
+ #mb{display:block}
+ nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#120a0a;flex-direction:column;padding:14px 18px;border-bottom:2px solid var(--red)}
+ nav ul.open{display:flex}
+ .hero .wrap,.two{grid-template-columns:1fr}
+ .hero{padding:36px 0}
+ section{padding:38px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="nav">
+  <a class="brand" href="#inicio"><img src="images/logo.jpg" alt="Logo Dulce Capricho">Dulce Capricho</a>
+  <button id="mb" aria-label="Abrir menú">☰</button>
+  <nav><ul id="menu">
+   <li><a href="#identidad">Identidad</a></li><li><a href="#productos">Productos</a></li>
+   <li><a href="#herramientas">Video</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#contacto">Contacto</a></li>
+  </ul></nav>
+ </div>
+</header>
+
+<section class="hero" id="inicio">
+ <div class="wrap">
+  <div>
+   <span class="tag">Emprendimiento de postres · Rionegro, Antioquia</span>
+   <h1>Pequeños caprichos, grandes momentos</h1>
+   <p>Mousse artesanal de maracuyá, mora y Milo, preparados con ingredientes frescos y mucho amor. Proyecto productivo del programa <b>Técnico en Integración de Contenidos Digitales</b>.</p>
+   <a class="btn b1" href="https://wa.me/573148121373?text=Hola%20Dulce%20Capricho%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a>
+   <a class="btn b2" href="https://www.instagram.com/dulcec_capricho" target="_blank" rel="noopener">📸 Instagram</a>
+   <a class="btn b3" href="#productos">Ver postres</a>
+  </div>
+  <img class="logo-hero" src="images/logo.jpg" alt="Logo de Dulce Capricho con tres vasos de postre">
+ </div>
+</section>
+
+<section id="identidad">
+ <div class="wrap">
+  <h2>🎨 Identidad corporativa</h2>
+  <p class="sub">Lo que somos y lo que soñamos</p>
+  <div class="grid">
+   <div class="card"><h3>Misión</h3><p style="color:var(--mut)">Elaborar postres artesanales de alta calidad que alegren los momentos especiales de nuestros clientes, ofreciendo productos deliciosos, creativos y preparados con amor.</p></div>
+   <div class="card"><h3>Visión</h3><p style="color:var(--mut)">Ser una empresa reconocida en Antioquia por la calidad, innovación y excelente servicio, convirtiéndonos en una de las marcas de postres preferidas.</p></div>
+   <div class="card"><h3>Valores</h3><ul><li>Responsabilidad</li><li>Honestidad</li><li>Calidad</li><li>Creatividad</li><li>Trabajo en equipo</li><li>Compromiso</li></ul></div>
+  </div>
+  <div class="two" style="margin-top:34px">
+   <img src="images/logo.jpg" alt="Logo Dulce Capricho" style="max-width:340px;margin:auto;border-radius:18px">
+   <div>
+    <h3 style="color:var(--yel)">El logo y el slogan</h3>
+    <p style="color:var(--mut);margin:8px 0">Los tres vasos simbolizan los sabores de la marca; el arco de colores, la alegría y diversidad; el gorro de chef, el compromiso con lo artesanal, la higiene y la calidad.</p>
+    <p><span class="dot" style="background:var(--yel)"></span>Amarillo: maracuyá</p>
+    <p><span class="dot" style="background:var(--pur)"></span>Morado: mora</p>
+    <p><span class="dot" style="background:var(--bro)"></span>Marrón: Milo</p>
+    <p><span class="dot" style="background:var(--red)"></span>Rojo: pasión y energía</p>
+    <p style="margin-top:10px"><b>“Pequeños caprichos, grandes momentos”</b>: un pequeño antojo tiene el poder de hacer especial un cumpleaños, una reunión o simplemente un momento para consentirse.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="productos">
+ <div class="wrap">
+  <h2>🍰 Nuestros postres</h2>
+  <p class="sub">Mousse artesanal · Pedidos por WhatsApp</p>
+  <div class="grid">
+   <div class="card prod"><img src="images/postre-maracuya.jpg" alt="Mousse de maracuyá" loading="lazy"><h3>Mousse de maracuyá</h3><p style="color:var(--mut)">Suave, cítrico y refrescante.</p><div class="price">$5.000</div><a class="btn b1" href="https://wa.me/573148121373?text=Quiero%20un%20postre%20de%20maracuy%C3%A1" target="_blank" rel="noopener">Pedir</a></div>
+   <div class="card prod"><img src="images/postre-mora.jpg" alt="Mousse de mora" loading="lazy"><h3>Mousse de mora</h3><p style="color:var(--mut)">Cremoso, con el dulce sabor de la mora.</p><div class="price">$5.000</div><a class="btn b1" href="https://wa.me/573148121373?text=Quiero%20un%20postre%20de%20mora" target="_blank" rel="noopener">Pedir</a></div>
+   <div class="card prod"><img src="images/postre-milo.jpg" alt="Mousse de Milo" loading="lazy"><h3>Mousse de Milo</h3><p style="color:var(--mut)">El chocolate malteado que todos aman.</p><div class="price">$5.000</div><a class="btn b1" href="https://wa.me/573148121373?text=Quiero%20un%20postre%20de%20Milo" target="_blank" rel="noopener">Pedir</a></div>
+  </div>
+ </div>
+</section>
+
+<section id="herramientas">
+ <div class="wrap">
+  <h2>🎬 Conoce Dulce Capricho</h2>
+  <p class="sub">Mira nuestro anuncio</p>
+  <div class="two">
+   <div class="vid">
+    <video controls playsinline preload="metadata" poster="images/mascota-zorro.jpg"><source src="videos/anuncio_dulce_capricho.mp4" type="video/mp4">Tu navegador no soporta video.</video>
+   </div>
+   <div>
+    <span class="tag">Video destacado</span>
+    <h3 style="color:var(--yel)">Anuncio de Dulce Capricho</h3>
+    <p style="color:var(--mut)">Nuestra mascota, el zorro chef, presenta los postres que preparamos con amor para consentirte.</p>
+   </div>
+  </div>
+  </div>
+</section>
+
+<section id="equipo">
+ <div class="wrap">
+  <h2>👥 Nuestro equipo</h2>
+  <p class="sub">Cuatro aprendices, cuatro áreas, un mismo capricho</p>
+  <img class="org" src="images/organigrama.jpg" alt="Organigrama de Dulce Capricho: Producción (Kevin), Ventas (Marinela), Marketing (Juan Pablo), Finanzas (Yulian Camilo)" loading="lazy">
+ </div>
+</section>
+
+<section id="contacto">
+ <div class="wrap" style="text-align:center">
+  <h2>📲 Haz tu pedido</h2>
+  <p class="sub">Escríbenos y consiéntete hoy</p>
+  <img src="images/mascota-zorro.jpg" alt="Mascota zorro chef de Dulce Capricho" style="width:200px;margin:0 auto 16px;border-radius:18px">
+  <a class="btn b1" href="https://wa.me/573148121373?text=Hola%20Dulce%20Capricho" target="_blank" rel="noopener">💬 WhatsApp 314 812 1373</a>
+  <a class="btn b2" href="https://www.instagram.com/dulcec_capricho" target="_blank" rel="noopener">📸 @dulcec_capricho</a>
+ </div>
+</section>
+
+<footer>
+ <p><b style="color:var(--yel)">Dulce Capricho</b> · Pequeños caprichos, grandes momentos ❤️</p>
+ <p>Proyecto SENATIC · SENA · I.E. Santa María · Rionegro, Antioquia · 2026</p>
+</footer>
+
+<div class="float">
+ <a href="https://wa.me/573148121373" target="_blank" rel="noopener" style="background:#25d366" aria-label="WhatsApp">WA</a>
+ <a href="https://www.instagram.com/dulcec_capricho" target="_blank" rel="noopener" style="background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4)" aria-label="Instagram">IG</a>
+</div>
+
+<script>
+var b=document.getElementById('mb'),m=document.getElementById('menu');
+b.setAttribute('aria-expanded','false');
+b.onclick=function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)};
+m.onclick=function(){m.classList.remove('open');b.setAttribute('aria-expanded','false')};
+</script>
+</body>
+</html>
